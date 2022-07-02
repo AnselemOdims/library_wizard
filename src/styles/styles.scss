@@ -3,6 +3,7 @@
 @import 'variables';
 @import 'mixins';
 @import 'progress';
+@import 'buttons';
 
 /* General page settings */
 html {
@@ -39,5 +40,5 @@ ul {
 }
 
 .App {
-  padding: 3.125rem 6.25rem;
+  padding: 3.125rem 16rem;
 }

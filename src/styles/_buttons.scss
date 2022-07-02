@@ -1,0 +1,39 @@
+.btn__container {
+  @include display-grid($grid, 1.8rem);
+
+  > div {
+    button {
+      @include font-stack('Poppins', 'san-serif', normal, 600, 1.1rem, 20px);
+      @include buttons(100%, 1.1rem);
+
+      &:hover {
+        background: $primary-color;
+        color: #fff;
+        border: solid 0.09rem $primary-color;
+      }
+
+      &.active__btn {
+        background-color: $primary-color;
+        border: solid 0.09rem $primary-color;
+        color: #fff
+      }
+    }
+  }
+}
+
+.dir_btn_container {
+  @include display-flex(row, flex-end, center);
+  margin-top: 4rem;
+
+  a {
+    @include buttons(20%, 0.6rem);
+      text-align: center;
+      margin-left: 1.1rem;
+
+      &:nth-of-type(2) {
+        background: $primary-color;
+        color: #fff;
+        border: solid 0.09rem $primary-color;
+      }
+  }
+}

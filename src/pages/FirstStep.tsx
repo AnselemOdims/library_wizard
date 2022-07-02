@@ -7,10 +7,12 @@ import { FirstStepProps } from '../utils/types';
 const FirstStep: FunctionComponent<FirstStepProps> = ({ genres }) => {
   return (  
     <div>
-      <GenreButtonList data={genres} />
-      <div>
-        <button>Back</button>
-        <Link to="/second-step">Next</Link>
+      <div className="btn__container">
+        <GenreButtonList data={genres} />
+      </div>
+      <div className="dir_btn_container">
+        <Link to="/">Back</Link>
+        <Link to="/second-step" style={{pointerEvents: 'none'}}>Next</Link>
       </div>
     </div>
   );

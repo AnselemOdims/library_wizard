@@ -16,14 +16,14 @@ interface DataInterface {
  
 const GenreButtonList = ({ data }: DataInterface) => {
   return ( 
-    <div>
+    <>
       {data && data.map((item) => (
          <GenreButton 
           key={item.id} 
           item={item}
         />
       ))}
-    </div>
+    </>
    );
 }
  

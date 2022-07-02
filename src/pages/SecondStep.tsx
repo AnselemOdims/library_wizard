@@ -12,11 +12,17 @@ const SecondStep: FunctionComponent<SecondStepProps> = () => {
   const subGenre = useSelector<RootState, GenreButtonListProps[]>(state => state.genre.subgenres!)
 
   return (  
-    <div>
-      <GenreButtonList data={subGenre} />
-      <div>
-        <button>Back</button>
-        <Link to="/second-step">Next</Link>
+    <div className="second__step">
+      {subGenre.length === 0 && <p>No Genre selected</p>}
+      <div className="btn__container">
+        <GenreButtonList data={subGenre} />
+        <div>
+          <button>Add New</button>
+        </div>
+      </div>
+      <div className="dir_btn_container">
+        <Link to="/">Back</Link>
+        <Link to="/third-step">Next</Link>
       </div>
     </div>
   );
