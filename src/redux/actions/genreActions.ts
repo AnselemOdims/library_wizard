@@ -10,3 +10,8 @@ export const addGenre = (payload: GenreInterface) => ({
   type: ADD_GENRE,
   payload,
 })
+
+export const trackStep = (payload: string) => ({
+  type: TRACK_STEP,
+  payload,
+});

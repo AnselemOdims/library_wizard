@@ -13,7 +13,11 @@ div.step__container {
 
       background: $neutral-color;
       border-radius: 50%;
-      color: #fff
+      color: #fff;
+
+      &.active {
+        background: red;
+      }
     }
 
     h4 {

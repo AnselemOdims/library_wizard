@@ -14,6 +14,7 @@ const App = () => {
     <div className="App">
       <Header />
       <Routes>
+        <Route element={<Header />}/>
         <Route path='/' element={<FirstStep genres={genres}/>}/>
         <Route path='/second-step' element={<SecondStep />}/>
         <Route path='/third-step' element={<ThirdStep />}/>

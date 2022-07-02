@@ -1,26 +1,22 @@
+import { useSelector } from "react-redux";
+import { useLocation } from 'react-router-dom';
+
+import { StateType } from "../utils/types";
+import CircularTracker from "./CircularTracker";
 
 const Progress = () => {
+  const step = useSelector<RootState, StateType>(state => state.step);
+  const location = useLocation();
+
   return (
       <div className="step__container">
-        <div>
-          <div><span>1</span></div>
-          <h4>Genre</h4>
-        </div>
+        <CircularTracker path="/" stepNum="1" title="Genre"/>
         <div className="step__line"></div>
-        <div>
-          <div><span>2</span></div>
-          <h4>Subgenre</h4>
-        </div>
+        <CircularTracker path="/second-step" stepNum="2" title="Subgenre"/>
         <div className="step__line"></div>
-        <div>
-          <div><span>3</span></div>
-          <h4>Add new subgenre</h4>
-        </div>
+        <CircularTracker path="/third-step" stepNum="3" title="Add new subgenre"/>
         <div className="step__line"></div>
-        <div>
-          <div><span>4</span></div>
-          <h4>Information</h4>
-        </div>
+        <CircularTracker path="/fourth-step" stepNum="4" title="Information"/>
       </div>
   );
 };

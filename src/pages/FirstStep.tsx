@@ -1,14 +1,22 @@
 import { FunctionComponent } from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 
 import GenreButtonList, { GenreButtonListProps } from '../components/GenreButtonList';
-import { FirstStepProps } from '../utils/types';
+import { trackStep } from '../redux/actions/genreActions';
+import { FirstStepProps, StateType } from '../utils/types';
  
 const FirstStep: FunctionComponent<FirstStepProps> = ({ genres }) => {
   const { id } = useSelector<RootState, GenreButtonListProps>(state => state.genre!)
+  const step = useSelector<RootState, StateType>(state => state.step)
+  const dispatch = useDispatch();
 
-  console.log(id)
+  const handleClick = () => {
+    if(id > 0) {
+      dispatch(trackStep('1'))
+    }
+  }
+  
   return (  
     <div>
       <div className="btn__container">
@@ -19,6 +27,7 @@ const FirstStep: FunctionComponent<FirstStepProps> = ({ genres }) => {
         <Link 
           to="/second-step" 
           className={!id ? 'inactive__link' : ''}
+          onClick={handleClick}
         >
           Next
         </Link>
