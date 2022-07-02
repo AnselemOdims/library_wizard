@@ -1,0 +1,49 @@
+@function font($type, $name) {
+  @return map-get($type, $name);
+}
+
+@mixin display-flex($direction, $justify, $align) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+  flex-direction: $direction;
+}
+
+@mixin display-grid($column, $gap) {
+  display: grid;
+  grid-template-columns: $column;
+  gap: $gap;
+}
+
+@mixin font-stack($family1, $family2, $style, $weight, $size, $height) {
+  font-family: $family1, $family2;
+  font-style: $style;
+  font-weight: $weight;
+  font-size: $size;
+  line-height: $height;
+}
+
+@mixin position($position, $top, $bottom, $left, $right) {
+  position: $position;
+  top: $top;
+  bottom: $bottom;
+  left: $left;
+  right: $right;
+}
+
+@mixin dimension($width, $height) {
+  width: $width;
+  height: $height;
+}
+
+@mixin buttons($button-border, $color, $shadow) {
+  border: $button-border;
+  margin-top: 25px;
+  padding: 10px 20px;
+  box-shadow: $shadow;
+  color: $color;
+  cursor: pointer;
+  background-size: 200% 100%;
+  background-position: right bottom;
+  transition: all 0.8s ease-out;
+}
