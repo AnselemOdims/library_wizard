@@ -1,20 +1,26 @@
 import  { FunctionComponent } from 'react';
 
 import GenreButton from './GenreButton';
-import { GenreInterface } from '../utils/types';
+import { GenreInterface, SubGenreInterface } from '../utils/types';
 
-interface GenreButtonListProps {
-  data?: GenreInterface[]
+export interface GenreButtonListProps {
+  id: number;
+  name: string;
+  subgenres?: SubGenreInterface[];
+  isDescriptionRequired?: boolean
+}
+
+interface DataInterface {
+  data: GenreButtonListProps[]
 }
  
-const GenreButtonList: FunctionComponent<GenreButtonListProps> = ({ data }) => {
+const GenreButtonList = ({ data }: DataInterface) => {
   return ( 
     <div>
       {data && data.map((item) => (
          <GenreButton 
           key={item.id} 
-          id={item.id}
-          name={item.name}
+          item={item}
         />
       ))}
     </div>

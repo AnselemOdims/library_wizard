@@ -1,15 +1,23 @@
 import { FunctionComponent } from 'react';
+import { useDispatch } from 'react-redux';
 
-import { DetailType } from '../utils/types';
+import { addGenre } from '../redux/actions/genreActions';
+import { GenreInterface } from '../utils/types';
+
+interface GenreButtonInterface {
+  item: GenreInterface
+}
  
-const GenreButton: FunctionComponent<DetailType> = ({ id, name}) => {
+const GenreButton: FunctionComponent<GenreButtonInterface> = ({ item }) => {
+  const dispatch = useDispatch();
+
   const handleClick = () => {
-    console.log({id, name})
+    dispatch(addGenre(item))
   }
 
   return ( 
     <div>
-      <button onClick={handleClick}>{name}</button>
+      <button onClick={handleClick}>{item.name}</button>
     </div>
    );
 }

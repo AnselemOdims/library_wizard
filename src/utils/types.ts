@@ -8,7 +8,7 @@ export interface SubGenreInterface extends DetailType {
 }
 
 export interface GenreInterface extends DetailType{
-  subgenres: SubGenreInterface[]
+  subgenres?: SubGenreInterface[]
 }
 
 export interface FirstStepProps {
