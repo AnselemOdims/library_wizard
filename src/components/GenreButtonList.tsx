@@ -1,21 +1,22 @@
 import  { FunctionComponent } from 'react';
 
 import GenreButton from './GenreButton';
+import { GenreInterface } from '../utils/types';
 
 interface GenreButtonListProps {
-  
+  data?: GenreInterface[]
 }
  
-const GenreButtonList: FunctionComponent<GenreButtonListProps> = () => {
+const GenreButtonList: FunctionComponent<GenreButtonListProps> = ({ data }) => {
   return ( 
     <div>
-      <GenreButton />
-      <GenreButton />
-      <GenreButton />
-      <GenreButton />
-      <GenreButton />
-      <GenreButton />
-      <GenreButton />
+      {data && data.map((item) => (
+         <GenreButton 
+          key={item.id} 
+          id={item.id}
+          name={item.name}
+        />
+      ))}
     </div>
    );
 }

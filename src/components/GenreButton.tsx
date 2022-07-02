@@ -1,13 +1,15 @@
 import { FunctionComponent } from 'react';
 
-interface GenreButtonProps {
-  
-}
+import { DetailType } from '../utils/types';
  
-const GenreButton: FunctionComponent<GenreButtonProps> = () => {
+const GenreButton: FunctionComponent<DetailType> = ({ id, name}) => {
+  const handleClick = () => {
+    console.log({id, name})
+  }
+
   return ( 
     <div>
-      <button>Genre 1</button>
+      <button onClick={handleClick}>{name}</button>
     </div>
    );
 }

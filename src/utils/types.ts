@@ -1,5 +1,5 @@
 export interface DetailType {
-  id: string;
+  id: number;
   name: string;
 }
 
@@ -7,7 +7,7 @@ export interface SubGenreInterface extends DetailType {
   isDescriptionRequired: boolean
 }
 
-export interface GenreInterface extends DetailType {
+export interface GenreInterface extends DetailType{
   subgenres: SubGenreInterface[]
 }
 
