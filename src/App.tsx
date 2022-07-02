@@ -1,9 +1,12 @@
-import React from 'react';
+import { Routes, Route } from 'react-router-dom';
 
-function App() {
+import Header from './components/Header';
+
+const App = () => {
   return (
     <div className="App">
-      <h1>Library Wizard</h1>
+      <Header />
+      <Routes></Routes>
     </div>
   );
 }
