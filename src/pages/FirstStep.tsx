@@ -1,14 +1,12 @@
 import { FunctionComponent } from 'react';
 
 import GenreButtonList from '../components/GenreButtonList';
-interface FirstStepProps {
-  
-}
+import { FirstStepProps } from '../utils/types';
  
-const FirstStep: FunctionComponent<FirstStepProps> = () => {
+const FirstStep: FunctionComponent<FirstStepProps> = ({ genres }) => {
   return (  
     <div>
-      <GenreButtonList />
+      <GenreButtonList data={genres} />
     </div>
   );
 }

@@ -1,4 +1,4 @@
-{
+export default {
 	"genres": [
 		{
 			"id": 1,
