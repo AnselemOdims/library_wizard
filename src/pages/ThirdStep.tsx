@@ -1,5 +1,6 @@
 import { FunctionComponent } from 'react';
 
+import GenreButtonList from '../components/GenreButtonList';
 interface ThirdStepProps {
   
 }
@@ -7,7 +8,7 @@ interface ThirdStepProps {
 const ThirdStep: FunctionComponent<ThirdStepProps> = () => {
   return (  
     <div>
-      <h2>Third Step</h2>
+      <GenreButtonList />
     </div>
   );
 }
