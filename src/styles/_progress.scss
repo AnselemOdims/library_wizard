@@ -1,0 +1,29 @@
+div.step__container {
+  @include display-flex(row, space-between, center);
+
+  margin: 3rem 0 5rem;
+
+  > div {
+    @include display-flex(column, unset, center);
+    gap: 1rem;
+
+    > div {
+      @include dimension(50px, 50px);
+      @include display-flex(row, center, center);
+
+      background: $neutral-color;
+      border-radius: 50%;
+      color: #fff
+    }
+
+    h4 {
+      font-weight: 500;
+    }
+
+    &.step__line {
+      border-top: solid 0.09rem $text-color-2;
+      width: 20%;
+      margin-bottom: 2rem;
+    }
+  }
+}

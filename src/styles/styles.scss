@@ -2,6 +2,7 @@
 
 @import 'variables';
 @import 'mixins';
+@import 'progress';
 
 /* General page settings */
 html {
@@ -30,8 +31,13 @@ body {
   overflow-x: hidden;
   position: relative;
   font-family: Poppins, sans-serif;
+  font-size: 16px;
 }
 
 ul {
   list-style: none;
+}
+
+.App {
+  padding: 3.125rem 6.25rem;
 }
