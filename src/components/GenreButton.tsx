@@ -1,8 +1,9 @@
 import { FunctionComponent } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { useLocation } from 'react-router-dom';
 
-import { addGenre } from '../redux/actions/genreActions';
-import { GenreInterface } from '../utils/types';
+import { addGenre, selectSubGenre } from '../redux/actions/genreActions';
+import { GenreInterface, SubGenreInterface } from '../utils/types';
 import { GenreButtonListProps } from './GenreButtonList';
 
 interface GenreButtonInterface {
@@ -12,9 +13,14 @@ interface GenreButtonInterface {
 const GenreButton: FunctionComponent<GenreButtonInterface> = ({ item }) => {
   const genre = useSelector<RootState, GenreButtonListProps>(state => state.genre!)
   const dispatch = useDispatch();
+  const location = useLocation();
 
   const handleClick = () => {
-    dispatch(addGenre(item))
+    if(location.pathname === '/') {
+      dispatch(addGenre(item))
+    } else {
+      dispatch(selectSubGenre(item))
+    }
   }
 
   return ( 

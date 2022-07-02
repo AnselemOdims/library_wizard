@@ -8,6 +8,7 @@
       @include font-stack('Poppins', 'san-serif', normal, 600, 1.1rem, 20px);
       @include buttons(100%, 1.1rem);
 
+      transition: all 0.5s ease-out;
       &:hover {
         background: $primary-color;
         color: #fff;
@@ -17,7 +18,8 @@
       &.active__btn {
         background-color: $primary-color;
         border: solid 0.09rem $primary-color;
-        color: #fff
+        color: #fff;
+        transition: all 0.5s ease-out;
       }
     }
   }

@@ -16,7 +16,8 @@ div.step__container {
       color: #fff;
 
       &.active {
-        background: red;
+        background: $primary-color;
+        transition: all 1.5s ease-out;
       }
     }
 
@@ -25,7 +26,7 @@ div.step__container {
     }
 
     &.step__line {
-      border-top: solid 0.09rem $text-color-2;
+      border-top: solid 0.09rem $text-color-1;
       width: 20%;
       margin-bottom: 2rem;
     }

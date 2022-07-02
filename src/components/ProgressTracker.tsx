@@ -14,9 +14,14 @@ const Progress = () => {
         <div className="step__line"></div>
         <CircularTracker path="/second-step" stepNum="2" title="Subgenre"/>
         <div className="step__line"></div>
-        <CircularTracker path="/third-step" stepNum="3" title="Add new subgenre"/>
-        <div className="step__line"></div>
-        <CircularTracker path="/fourth-step" stepNum="4" title="Information"/>
+        {step.secondStep ? (
+        <>
+          <CircularTracker path="/third-step" stepNum="3" title="Add new subgenre"/>
+          <div className="step__line"></div>
+          <CircularTracker path="/fourth-step" stepNum="4" title="Information"/>
+        </>
+        ) : (<CircularTracker path="" stepNum="..." title=""/>)
+        }
       </div>
   );
 };
