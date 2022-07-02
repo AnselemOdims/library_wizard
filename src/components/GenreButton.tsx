@@ -10,19 +10,18 @@ interface GenreButtonInterface {
 }
  
 const GenreButton: FunctionComponent<GenreButtonInterface> = ({ item }) => {
-  const subGenre = useSelector<RootState, GenreButtonListProps>(state => state.genre!)
+  const genre = useSelector<RootState, GenreButtonListProps>(state => state.genre!)
   const dispatch = useDispatch();
 
   const handleClick = () => {
     dispatch(addGenre(item))
-    console.log(subGenre.name)
   }
 
   return ( 
     <div>
       <button 
         onClick={handleClick}
-        className={subGenre.name===item.name ? 'active__btn' : ''}
+        className={genre.name===item.name ? 'active__btn' : ''}
       >
         {item.name}
       </button>

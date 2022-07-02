@@ -1,6 +1,8 @@
 .btn__container {
   @include display-grid($grid, 1.8rem);
 
+  row-gap: 1rem;
+
   > div {
     button {
       @include font-stack('Poppins', 'san-serif', normal, 600, 1.1rem, 20px);
@@ -34,6 +36,11 @@
         background: $primary-color;
         color: #fff;
         border: solid 0.09rem $primary-color;
+
+        &.inactive__link {
+          pointer-events: none;
+          cursor: not-allowed;
+        }
       }
   }
 }
