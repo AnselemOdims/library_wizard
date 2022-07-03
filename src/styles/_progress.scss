@@ -1,11 +1,18 @@
+h1 {
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: $text-color-4
+}
+
 div.step__container {
   @include display-flex(row, space-between, center);
 
   margin: 3rem 0 5rem;
+  width: fit-content;
 
   > div {
-    @include display-flex(column, unset, center);
-    gap: 1rem;
+    @include display-flex(column, space-between, center);
+    gap: 1.1rem;
 
     > div {
       @include dimension(50px, 50px);
@@ -13,22 +20,44 @@ div.step__container {
 
       background: $neutral-color;
       border-radius: 50%;
-      color: #fff;
+      color: $text-color-1;
+      font-size: 1.5rem;
+      font-weight: 400;
+      margin: 0 1.2rem;
+      position: relative;
+      bottom: 1rem;
 
       &.active {
         background: $primary-color;
+        color: #fff;
         transition: all 1.5s ease-out;
       }
     }
 
     h4 {
-      font-weight: 500;
+      font-weight: 550;
+      color: $text-color-1;
+      font-size: 14px;
+      position: absolute;
+      top: 10.7rem;
+
+      &.active {
+        color: $text-color-4;
+        transition: all 2s ease-out;
+      }
     }
 
     &.step__line {
-      border-top: solid 0.09rem $text-color-1;
-      width: 20%;
+      max-width: 180px;
+      min-width: 150px;
+      border-top: solid 0.09rem $text-color-2;
+      width: 100%;
       margin-bottom: 2rem;
+
+      &.active {
+        border-top: solid 0.09rem $text-color-4;
+        transition: all 1.5s ease-out;
+      }
     }
   }
 }

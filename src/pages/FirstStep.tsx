@@ -4,11 +4,12 @@ import { Link } from 'react-router-dom';
 
 import GenreButtonList, { GenreButtonListProps } from '../components/GenreButtonList';
 import { trackStep } from '../redux/actions/genreActions';
-import { FirstStepProps, StateType } from '../utils/types';
+import { FirstStepProps } from '../utils/types';
+import Icon from '../images/down.svg';
  
 const FirstStep: FunctionComponent<FirstStepProps> = ({ genres }) => {
   const { id } = useSelector<RootState, GenreButtonListProps>(state => state.genre!)
-  const step = useSelector<RootState, StateType>(state => state.step)
+  // const step = useSelector<RootState, StateType>(state => state.step)
   const dispatch = useDispatch();
 
   const handleClick = () => {
@@ -23,7 +24,7 @@ const FirstStep: FunctionComponent<FirstStepProps> = ({ genres }) => {
         <GenreButtonList data={genres} />
       </div>
       <div className="dir_btn_container">
-        <Link to="/">Back</Link>
+        <Link to="/"><img src={Icon} />Back</Link>
         <Link 
           to="/second-step" 
           className={!id ? 'inactive__link' : ''}

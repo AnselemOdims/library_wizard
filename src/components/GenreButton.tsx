@@ -11,7 +11,8 @@ interface GenreButtonInterface {
 }
  
 const GenreButton: FunctionComponent<GenreButtonInterface> = ({ item }) => {
-  const genre = useSelector<RootState, GenreButtonListProps>(state => state.genre!)
+  const genre = useSelector<RootState, GenreButtonListProps>(state => state.genre!);
+  const subGenre = useSelector<RootState, SubGenreInterface>(state => state.subGenre);
   const dispatch = useDispatch();
   const location = useLocation();
 
@@ -19,7 +20,7 @@ const GenreButton: FunctionComponent<GenreButtonInterface> = ({ item }) => {
     if(location.pathname === '/') {
       dispatch(addGenre(item))
     } else {
-      dispatch(selectSubGenre(item))
+      dispatch(selectSubGenre({ ...item, addNew: false }))
     }
   }
 
@@ -27,7 +28,7 @@ const GenreButton: FunctionComponent<GenreButtonInterface> = ({ item }) => {
     <div>
       <button 
         onClick={handleClick}
-        className={genre.name===item.name ? 'active__btn' : ''}
+        className={(genre.name===item.name || subGenre.name===item.name) ? 'active__btn' : ''}
       >
         {item.name}
       </button>

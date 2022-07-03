@@ -12,10 +12,10 @@ const CircularTracker: FunctionComponent<CircularTrackerProps> = ({ path, stepNu
 
   return ( 
       <div>
-        <div  className={location.pathname=== path ? 'active' : ''}>
+        <div className={location.pathname=== path ? 'active' : ''}>
           <span>{stepNum}</span>
         </div>
-        <h4>{title}</h4>
+        <h4 className={location.pathname=== path ? 'active' : ''}>{title}</h4>
       </div>
    );
 }

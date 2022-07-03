@@ -4,6 +4,8 @@
 @import 'mixins';
 @import 'progress';
 @import 'buttons';
+@import 'steps';
+// @import 'checkbox';
 
 /* General page settings */
 html {
@@ -35,10 +37,20 @@ body {
   font-size: 16px;
 }
 
-ul {
+ul, li {
   list-style: none;
 }
 
 .App {
-  padding: 3.125rem 16rem;
+  padding: 3.125rem 14rem;
+}
+
+input[type="checkbox" i] {
+  border: solid 5px red;
+  padding: 20px
+}
+
+input[type="checkbox" i]:checked {
+  background: red
+
 }

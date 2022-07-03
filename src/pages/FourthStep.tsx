@@ -1,6 +1,7 @@
 import { FunctionComponent } from 'react';
 
 import GenreButtonList from '../components/GenreButtonList';
+import Icon from '../images/down.svg';
 interface FourthStepProps {
   
 }
@@ -8,7 +9,7 @@ interface FourthStepProps {
 const FourthStep: FunctionComponent<FourthStepProps> = () => {
   return (  
     <div>
-      <GenreButtonList />
+      <h1>Fourth Step</h1>
     </div>
   );
 }

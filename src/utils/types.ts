@@ -4,7 +4,8 @@ export interface DetailType {
 }
 
 export interface SubGenreInterface extends DetailType {
-  isDescriptionRequired?: boolean
+  isDescriptionRequired?: boolean;
+  addNew?: boolean
 }
 
 export interface GenreInterface extends DetailType{
@@ -15,3 +16,8 @@ export interface FirstStepProps {
   genres: GenreInterface[]
 }
 
+export interface StateType {
+  firstStep: boolean,
+  secondStep: boolean,
+  thirdStep: boolean,
+}

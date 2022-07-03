@@ -30,9 +30,26 @@
   margin-top: 4rem;
 
   a {
-    @include buttons(20%, 0.6rem);
-      text-align: center;
-      margin-left: 1.1rem;
+    @include buttons(17%, 0.6rem);
+    
+    text-align: center;
+    margin-left: 1.1rem;
+    font-weight: 550;
+    transition: all 0.4s ease-out;
+
+    &:hover {
+      box-shadow: $shadow-1;
+    }
+    
+    &:nth-of-type(1) {
+      @include display-flex(row, flex-start, center);
+      gap: 1.1rem;
+
+      img {
+        transform: rotate(90deg);
+        width: 1.55rem
+      }
+    }
 
       &:nth-of-type(2) {
         background: $primary-color;

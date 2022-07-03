@@ -5,22 +5,23 @@ $primary-color: #525B66;
 $accent-color: #E7EDF2;
 
 /* Neutral Colors */
-$neutral-color: #C5C4CA;
+$neutral-color: #E7EDF2;
 
 $text-color-1: #9FA2A8;
-$text-color-2: #7b7b7e;
+$text-color-2: #cbcbcc;
+$text-color-3: #787d86;
+$text-color-4: #575f69;
 
 
 /* button variables */
-$button-border: solid 0.09rem $text-color-2;
+$button-border: solid 0.15rem $text-color-2;
 $border-none: solid 0 #fff;
 
 /* Grid variables */
 $grid: repeat(4, 1fr);
 
 /* Box Shadows */
-$shadow-1: rgba(0, 0, 0, 0.1) 0 20px 25px -5px,
-  rgba(0, 0, 0, 0.04) 0 10px 10px -5px;
+$shadow-1: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 
   /* Font size stack */
 $font-size: (
