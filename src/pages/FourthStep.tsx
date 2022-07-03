@@ -11,7 +11,7 @@ const FourthStep: FunctionComponent<FourthStepProps> = () => {
 		<div>
 			<Form />
 			<div className='dir_btn_container'>
-				<Link to='/second-step'>
+				<Link to='/third-step'>
 					<img src={Icon} />
 					Back
 				</Link>
