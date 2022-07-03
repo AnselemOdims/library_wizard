@@ -8,30 +8,15 @@ import {
 
 import LinkIcon from '../images/link.png'
 
-interface FormProps {}
+interface FormProps {
+  handleChange: (e:React.FormEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => void;
+  formData: {
+    [P: string]: string
+  }
+}
 
-const Form: FunctionComponent<FormProps> = () => {
+const Form: FunctionComponent<FormProps> = ({ handleChange, formData }) => {
 	const [focus, setFocus] = useState(false);
-	const [formData, setFormData] = useState({
-		title: '',
-		author: '',
-		isbn: '',
-		publisher: '',
-		datePublished: '',
-		pagesNumber: '',
-		format: '',
-		edition: '',
-		editionLanguage: '',
-		description: '',
-	});
-
-	const handleChange = (e: React.FormEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-		const { value, name } = e.currentTarget;
-		setFormData({ 
-      ...formData,
-      [name]:  value
-    });
-	};
 
 	const handleFocus = () => {
 		setFocus(true);
@@ -40,10 +25,6 @@ const Form: FunctionComponent<FormProps> = () => {
 	const handleBlur = () => {
 		setFocus(false);
 	};
-
-  const handleSubmit = () => {
-    console.log(formData)
-  }
 
 	return (
 		<form>
@@ -61,7 +42,8 @@ const Form: FunctionComponent<FormProps> = () => {
 				<label>Author</label>
 				<select
 					value={formData.author}
-					onChange={(e) => setFormData({ ...formData, author: e.target.value })}
+					onChange={handleChange}
+          name="author"
 				>
 					<option disabled={true} value=''>
 						Author
@@ -85,9 +67,8 @@ const Form: FunctionComponent<FormProps> = () => {
 				<label>Publisher</label>
 				<select
 					value={formData.publisher}
-					onChange={(e) =>
-						setFormData({ ...formData, publisher: e.target.value })
-					}
+					onChange={handleChange}
+          name="publisher"
 				>
 					<option disabled={true} value=''>
 						Publisher
@@ -123,7 +104,8 @@ const Form: FunctionComponent<FormProps> = () => {
 				<label>Format</label>
 				<select
 					value={formData.format}
-					onChange={(e) => setFormData({ ...formData, format: e.target.value })}
+					onChange={handleChange}
+          name="format"
 				>
 					<option disabled={true} value=''>
 						Format
@@ -148,9 +130,8 @@ const Form: FunctionComponent<FormProps> = () => {
 					<label>Edition Language</label>
 					<select
 						value={formData.editionLanguage}
-						onChange={(e) =>
-							setFormData({ ...formData, editionLanguage: e.target.value })
-						}
+						onChange={handleChange}
+            name="editionLanguage"
 					>
 						<option disabled={true} value=''>
 							Edition Language
