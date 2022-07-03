@@ -6,6 +6,7 @@
 @import 'buttons';
 @import 'steps';
 @import 'form';
+@import 'modal';
 
 /* General page settings */
 html {
@@ -48,14 +49,4 @@ ul, li {
   border-radius: 0.5rem;
   width: 60%;
   margin: 0 auto;
-}
-
-input[type="checkbox" i] {
-  border: solid 5px red;
-  padding: 20px
-}
-
-input[type="checkbox" i]:checked {
-  background: red
-
 }

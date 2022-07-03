@@ -1,0 +1,48 @@
+.success-modal {
+  @include position(absolute, 5%, unset, 17%, 17%);
+  @include display-flex(column, unset, center);
+
+  border: solid 2px red;
+  padding: 5rem;
+  border: solid 0.15rem $text-color-2;
+  border-radius: 0.5rem;
+  background: #fff;
+
+  > div {
+
+    &:nth-of-type(1) {
+      @include display-flex(row, center, center);
+
+      width: 10rem;
+      height: 10rem;
+      background: $neutral-color;
+      border-radius: 50%;
+
+      img {
+        width: 4.7rem;
+      }
+    } 
+
+    &:nth-of-type(2) {
+      @include display-flex(row, center, center);
+      width: 100%;
+
+      button {
+        @include font-stack('Poppins', sans-serif, normal, 500, 1rem, 1.2rem);
+
+        border: none;
+        padding: 1.1rem;
+        width: 60%;
+        border-radius: 0.5rem;
+        background: $primary-color;
+        color: #fff;
+      }
+    }
+  }
+
+  p {
+    margin: 2rem 0 4rem;
+    font-weight: 500;
+    color: $text-color-4
+  }
+}
