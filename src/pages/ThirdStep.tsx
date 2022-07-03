@@ -76,7 +76,3 @@ const ThirdStep: FunctionComponent<ThirdStepProps> = () => {
 }
  
 export default ThirdStep;
-
-function dispatch(arg0: any) {
-  throw new Error('Function not implemented.');
-}

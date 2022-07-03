@@ -28,12 +28,12 @@
 .dir_btn_container {
   @include display-flex(row, flex-end, center);
   margin-top: 4rem;
+  gap: 1.1rem;
 
   a {
     @include buttons(17%, 0.6rem);
     
     text-align: center;
-    margin-left: 1.1rem;
     font-weight: 550;
     transition: all 0.4s ease-out;
 
@@ -61,5 +61,22 @@
           cursor: not-allowed;
         }
       }
+  }
+
+  button {
+    @include buttons(17%, 0.6rem);
+
+    background: $primary-color;
+    color: #fff;
+    border: solid 0.09rem $primary-color;
+    padding: 0.8rem;
+    justify-content: center;
+    font-family: Poppins, sans-serif;
+    font-weight: 550;
+    transition: all 0.4s ease-out;
+    
+    &:hover {
+      box-shadow: $shadow-1;
+    }
   }
 }
