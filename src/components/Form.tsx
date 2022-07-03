@@ -12,7 +12,7 @@ interface FormProps {
   handleChange: (e:React.FormEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => void;
   formData: {
     [P: string]: string
-  }
+  };
 }
 
 const Form: FunctionComponent<FormProps> = ({ handleChange, formData }) => {

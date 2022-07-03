@@ -8,6 +8,8 @@ import { postData } from '../utils/fakeFetch';
 interface FourthStepProps {}
 
 const FourthStep: FunctionComponent<FourthStepProps> = () => {
+	const [formError, setFormError] = useState('');
+	const [loading, setLoading] = useState(false)
 	const [formData, setFormData] = useState({
 		title: '',
 		author: '',
@@ -22,15 +24,23 @@ const FourthStep: FunctionComponent<FourthStepProps> = () => {
 	});
 
 	const handleClick = async () => {
+		// if(Object.values(formData).includes('')) {
+		// 	setFormError('Kindly include all information necessary to add a new book');
+		// 	return;
+		// }
 		try {
+			setLoading(true)
 			const res = await postData(formData);
 			console.log(res);
 		} catch (err) {
 			console.error(err);
+		} finally {
+			setLoading(false)
 		}
 	}
 
 	const handleChange = (e: React.FormEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+		setFormError('');
 		const { value, name } = e.currentTarget;
 		setFormData({ 
       ...formData,
@@ -41,6 +51,7 @@ const FourthStep: FunctionComponent<FourthStepProps> = () => {
 	return (
 		<div>
 			<Form handleChange={(e) => handleChange(e)} formData={formData} />
+			<p className="error">{formError}</p>
 			<div className='dir_btn_container'>
 				<Link to='/third-step'>
 					<img src={Icon} alt="back arrow" />
@@ -49,7 +60,7 @@ const FourthStep: FunctionComponent<FourthStepProps> = () => {
 				<button
 					onClick={handleClick}
 				>
-					Add
+					{loading ? <span className="loading-spinner"></span> : 'Add'}
 				</button>
 			</div>
 		</div>

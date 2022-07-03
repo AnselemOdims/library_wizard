@@ -126,3 +126,29 @@ form {
 .desc::-webkit-resizer {
   display: none;
 }
+
+.error {
+  color: red;
+  padding-top: 1rem;
+  font-size: 0.8rem;
+}
+
+.loading-spinner {
+  @include dimension(1rem, 1rem);
+
+  animation: rotate-forever linear infinite 0.8s;
+  border: 2px solid #fff;
+  border-right-color: transparent;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+@keyframes rotate-forever {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}

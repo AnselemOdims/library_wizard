@@ -3,9 +3,9 @@ export const postData = (data: any) =>
     if (Object.values(data).includes('')) {
       return setTimeout(
         () => reject(new Error('All data is required')),
-        1000
+        2000
       );
     }
 
-    setTimeout(() => resolve(data), 1000);
+    setTimeout(() => resolve(data), 2000);
 });
