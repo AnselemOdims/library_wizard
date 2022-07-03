@@ -1,5 +1,4 @@
 import { Routes, Route, useLocation } from 'react-router-dom';
-import { TransitionGroup, CSSTransition } from 'react-transition-group';
 
 import Header from './components/Header';
 import FirstStep from './pages/FirstStep';
@@ -16,12 +15,6 @@ const App = () => {
   return (
     <section className="App">
       <Header />
-      <TransitionGroup component={null}>
-          <CSSTransition
-            key={location.key}
-            classNames="slide-in"
-            timeout={1000}
-          >
       <Routes>
         <Route element={<Header />}/>
         <Route path='/' element={<FirstStep genres={genres}/>}/>
@@ -29,8 +22,6 @@ const App = () => {
         <Route path='/third-step' element={<ThirdStep />}/>
         <Route path='/fourth-step' element={<FourthStep />}/>
       </Routes>
-      </CSSTransition>
-      </TransitionGroup>
     </section>
   );
 }

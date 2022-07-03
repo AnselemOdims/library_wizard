@@ -1,8 +1,9 @@
 import { FunctionComponent, useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
-import Form from '../components/Form';
+import { CSSTransition } from 'react-transition-group';
 
+import Form from '../components/Form';
 import SuccessModal from '../components/SuccessModal';
 import Icon from '../images/down.svg';
 import { postData } from '../utils/fakeFetch';
@@ -88,8 +89,7 @@ const FourthStep: FunctionComponent<FourthStepProps> = () => {
 					{loading ? <span className='loading-spinner'></span> : 'Add'}
 				</button>
 			</div>
-			{/* {showModal && <SuccessModal />} */}
-			<SuccessModal />
+				<SuccessModal showModal={showModal} />
 		</div>
 	);
 };
