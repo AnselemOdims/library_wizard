@@ -1,6 +1,6 @@
 export interface DetailType {
-  id: number;
-  name: string;
+  id?: number;
+  name?: string;
 }
 
 export interface SubGenreInterface extends DetailType {

@@ -1,21 +1,23 @@
 import { FunctionComponent, useEffect, useState } from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
 import Checkbox from 'react-checkbox-component';
 
-import GenreButtonList from '../components/GenreButtonList';
+import GenreButtonList, { GenreButtonListProps } from '../components/GenreButtonList';
 import { StateType, SubGenreInterface } from '../utils/types';
 import Icon from '../images/down.svg';
+import { createSubGenre, selectSubGenre, trackStep } from '../redux/actions/genreActions';
 interface ThirdStepProps {
   
 }
  
 const ThirdStep: FunctionComponent<ThirdStepProps> = () => {
   const step = useSelector<RootState, StateType>(state => state.step);
-  // const { id, addNew } = useSelector<RootState, SubGenreInterface>(state => state.subGenre)
+  const subGenre = useSelector<RootState, GenreButtonListProps[]>(state => state.genre.subgenres!)
   const navigate = useNavigate();
   const [checked, setChecked] = useState(false);
   const [description, setDescription] = useState('')
+  const dispatch = useDispatch();
   
   const handleCheck = () => {
     setChecked(!checked)
@@ -23,6 +25,16 @@ const ThirdStep: FunctionComponent<ThirdStepProps> = () => {
 
   const handleDescription = (e:React.ChangeEvent<HTMLInputElement>) => {
     setDescription(e.target.value)
+  }
+
+  const handleClick = () => {
+      const id = subGenre?.at(-1)?.id! + 1
+      const data = { id, name: description, isDescriptionRequired: checked }
+    if(description){
+      dispatch(createSubGenre(data))
+      dispatch(trackStep('3'));
+      dispatch(selectSubGenre({...data, addNew: false }))
+    }
   }
 
   useEffect(() => {
@@ -54,7 +66,7 @@ const ThirdStep: FunctionComponent<ThirdStepProps> = () => {
         <Link 
           to='/fourth-step'
           className={!description ? 'inactive__link' : ''}
-          // onClick={handleDescription}
+          onClick={handleClick}
         >
           Next
         </Link>
@@ -64,3 +76,7 @@ const ThirdStep: FunctionComponent<ThirdStepProps> = () => {
 }
  
 export default ThirdStep;
+
+function dispatch(arg0: any) {
+  throw new Error('Function not implemented.');
+}

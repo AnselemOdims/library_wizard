@@ -1,21 +1,51 @@
-import { GenreInterface, SubGenreInterface } from '../../utils/types';
-import { ADD_GENRE, addGenre } from '../actions/genreActions';
+import { GenreInterface, StateType, SubGenreInterface } from '../../utils/types';
+import { ADD_GENRE, CREATE_SUB_GENRE } from '../actions/genreActions';
 
+interface NewGenreInterface {
+  id?: number,
+  name?: string,
+  subgenres?: NewSubgenreInterface[]
+}
 interface ActionInterface {
   type: string;
-  payload: GenreInterface
+  payload: NewGenreInterface
 }
 
-const initialState: GenreInterface = {
+const initialState: NewGenreInterface = {
   id: 0,
   name: '',
-  subgenres: []
+  subgenres: [{
+    id: 0,
+    name: '',
+    isDescriptionRequired: false,
+  }]
 }
 
-const genreReducer = (state=initialState, action: ActionInterface) => {
+interface NewSubgenreInterface {
+  id?: number;
+  name?: string;
+  isDescriptionRequired?: boolean;
+}
+
+const addSubgenre = (state:NewGenreInterface, payload: NewSubgenreInterface) => {
+  if(Array.isArray(state.subgenres)){
+    const newItem = { ...payload }
+    return { 
+      ...state,
+      subgenres: [
+        ...state.subgenres,
+        newItem
+      ]
+    };
+  }
+}
+
+const genreReducer = (state=initialState, action: ActionInterface): NewGenreInterface => {
   switch(action.type) {
     case ADD_GENRE:
       return { ...state, ...action.payload }
+    case CREATE_SUB_GENRE:
+      return { ...addSubgenre(state, action.payload)}
     default:
       return state;
   }

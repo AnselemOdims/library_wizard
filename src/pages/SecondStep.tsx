@@ -18,7 +18,7 @@ const SecondStep: FunctionComponent<SecondStepProps> = () => {
   const navigate = useNavigate();
   
   const handleClick = () => {
-    if(id > 0) {
+    if(id && id > 0) {
       dispatch(trackStep('2'))
     }
   }

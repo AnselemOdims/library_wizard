@@ -13,7 +13,7 @@ const FirstStep: FunctionComponent<FirstStepProps> = ({ genres }) => {
   const dispatch = useDispatch();
 
   const handleClick = () => {
-    if(id > 0) {
+    if(id && id > 0) {
       dispatch(trackStep('1'))
     }
   }

@@ -26,7 +26,7 @@ const changeStatus = (state:StateType, payload: string) => {
   } else {
     return {
       ...state,
-      secondStep: true,
+      thirdStep: true,
     }
   }
 }

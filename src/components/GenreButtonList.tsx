@@ -4,8 +4,8 @@ import GenreButton from './GenreButton';
 import { GenreInterface, SubGenreInterface } from '../utils/types';
 
 export interface GenreButtonListProps {
-  id: number;
-  name: string;
+  id?: number;
+  name?: string;
   subgenres?: SubGenreInterface[];
   isDescriptionRequired?: boolean
 }
