@@ -7,11 +7,12 @@ import Form from '../components/Form';
 import SuccessModal from '../components/SuccessModal';
 import Icon from '../images/down.svg';
 import { postData } from '../utils/fakeFetch';
-import { StateType } from '../utils/types';
+import { StateType, SubGenreInterface } from '../utils/types';
 interface FourthStepProps {}
 
 const FourthStep: FunctionComponent<FourthStepProps> = () => {
 	const step = useSelector<RootState, StateType>((state) => state.step);
+	const { isDescriptionRequired } = useSelector<RootState, SubGenreInterface>(state => state.subGenre)
 	const navigate = useNavigate();
 	const [formError, setFormError] = useState('');
 	const [loading, setLoading] = useState(false);
@@ -30,16 +31,8 @@ const FourthStep: FunctionComponent<FourthStepProps> = () => {
 	});
 
 	const handleClick = async () => {
-		const { description, ...others } = formData;
-		if (formData.description && Object.values(formData).includes('')) {
-			setFormError(
-				'Kindly include all information necessary to add a new book'
-			);
-			return;
-		} else if (
-			!formData.description &&
-			Object.values({ ...others }).includes('')
-		) {
+		const { description, title } = formData;
+		if (!title || (isDescriptionRequired && !description)) {
 			setFormError(
 				'Kindly include all information necessary to add a new book'
 			);
