@@ -7,6 +7,8 @@ import {
 } from '../utils/formData';
 
 import LinkIcon from '../images/link.png'
+import { useSelector } from 'react-redux';
+import { SubGenreInterface } from '../utils/types';
 
 interface FormProps {
   handleChange: (e:React.FormEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => void;
@@ -17,6 +19,7 @@ interface FormProps {
 
 const Form: FunctionComponent<FormProps> = ({ handleChange, formData }) => {
 	const [focus, setFocus] = useState(false);
+  const { isDescriptionRequired } = useSelector<RootState, SubGenreInterface>(state => state.subGenre)
 
 	const handleFocus = () => {
 		setFocus(true);
@@ -142,7 +145,7 @@ const Form: FunctionComponent<FormProps> = ({ handleChange, formData }) => {
 					</select>
 				</div>
 			</div>
-			<div>
+			{isDescriptionRequired && <div className="text__desc">
 				<label>Description</label>
         <div>
           <textarea
@@ -159,6 +162,7 @@ const Form: FunctionComponent<FormProps> = ({ handleChange, formData }) => {
           </div>
         </div>
 			</div>
+      }
 		</form>
 	);
 };

@@ -43,7 +43,7 @@ form {
       }
     }
 
-    &:last-of-type {
+    &.text__desc {
 
       > div {
         @include dimension(100%, 6.3rem);

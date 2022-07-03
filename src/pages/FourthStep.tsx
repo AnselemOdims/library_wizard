@@ -3,13 +3,15 @@ import { Link } from 'react-router-dom';
 import Form from '../components/Form';
 
 import GenreButtonList from '../components/GenreButtonList';
+import SuccessModal from '../components/SuccessModal';
 import Icon from '../images/down.svg';
 import { postData } from '../utils/fakeFetch';
 interface FourthStepProps {}
 
 const FourthStep: FunctionComponent<FourthStepProps> = () => {
 	const [formError, setFormError] = useState('');
-	const [loading, setLoading] = useState(false)
+	const [loading, setLoading] = useState(false);
+	const [showModal, setShowModal] = useState(false);
 	const [formData, setFormData] = useState({
 		title: '',
 		author: '',
@@ -24,14 +26,15 @@ const FourthStep: FunctionComponent<FourthStepProps> = () => {
 	});
 
 	const handleClick = async () => {
-		// if(Object.values(formData).includes('')) {
-		// 	setFormError('Kindly include all information necessary to add a new book');
-		// 	return;
-		// }
+		if(Object.values(formData).includes('')) {
+			setFormError('Kindly include all information necessary to add a new book');
+			return;
+		}
 		try {
 			setLoading(true)
 			const res = await postData(formData);
 			console.log(res);
+			setShowModal(true)
 		} catch (err) {
 			console.error(err);
 		} finally {
@@ -63,6 +66,7 @@ const FourthStep: FunctionComponent<FourthStepProps> = () => {
 					{loading ? <span className="loading-spinner"></span> : 'Add'}
 				</button>
 			</div>
+			{showModal && <SuccessModal />}
 		</div>
 	);
 };
