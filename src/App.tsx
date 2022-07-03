@@ -14,7 +14,7 @@ const App = () => {
   const location = useLocation();
 
   return (
-    <div className="App">
+    <section className="App">
       <Header />
       <TransitionGroup component={null}>
           <CSSTransition
@@ -31,7 +31,7 @@ const App = () => {
       </Routes>
       </CSSTransition>
       </TransitionGroup>
-    </div>
+    </section>
   );
 }
 
