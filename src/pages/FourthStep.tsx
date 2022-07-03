@@ -70,18 +70,18 @@ const FourthStep: FunctionComponent<FourthStepProps> = () => {
 		});
 	};
 
-	// useEffect(() => {
-	//   if(!step.firstStep){
-	//     navigate('/')
-	//   }
-	// })
+	useEffect(() => {
+	  if(!step.firstStep){
+	    navigate('/')
+	  }
+	})
 
 	return (
 		<div>
 			<Form handleChange={(e) => handleChange(e)} formData={formData} />
 			<p className='error'>{formError}</p>
 			<div className='dir_btn_container'>
-				<Link to='/third-step'>
+				<Link to={step.thirdStep ? '/third-step' : '/second-step'}>
 					<img src={Icon} alt='back arrow' />
 					Back
 				</Link>

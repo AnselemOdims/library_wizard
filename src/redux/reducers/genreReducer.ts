@@ -1,5 +1,5 @@
 import { GenreInterface, StateType, SubGenreInterface } from '../../utils/types';
-import { ADD_GENRE, CREATE_SUB_GENRE } from '../actions/genreActions';
+import { ADD_GENRE, CREATE_SUB_GENRE, RESET_STATE } from '../actions/genreActions';
 
 interface NewGenreInterface {
   id?: number,
@@ -46,6 +46,8 @@ const genreReducer = (state=initialState, action: ActionInterface): NewGenreInte
       return { ...state, ...action.payload }
     case CREATE_SUB_GENRE:
       return { ...addSubgenre(state, action.payload)}
+    case RESET_STATE:
+      return { ...initialState }
     default:
       return state;
   }

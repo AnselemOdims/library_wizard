@@ -33,7 +33,7 @@ const ThirdStep: FunctionComponent<ThirdStepProps> = () => {
     if(description){
       dispatch(createSubGenre(data))
       dispatch(trackStep('3'));
-      dispatch(selectSubGenre({...data, addNew: false }))
+      dispatch(selectSubGenre({...data }))
     }
   }
 

@@ -1,5 +1,5 @@
 import { StateType } from "../../utils/types"
-import { TRACK_STEP } from "../actions/genreActions"
+import { RESET_STATE, TRACK_STEP } from "../actions/genreActions"
 
 interface ActionInterface {
   type: string;
@@ -37,6 +37,8 @@ const stepReducer = (state = initialState, action: ActionInterface) => {
       return {
         ...changeStatus(state, action.payload)
       }
+    case RESET_STATE:
+      return { ...initialState }
     default:
       return state;
   }

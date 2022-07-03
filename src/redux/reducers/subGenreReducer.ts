@@ -1,6 +1,7 @@
 import { SubGenreInterface } from '../../utils/types';
 import 
-  { SELECT_SUB_GENRE } 
+  { RESET_STATE,
+SELECT_SUB_GENRE } 
   from '../actions/genreActions';
 
 
@@ -24,6 +25,8 @@ const subGenreReducer = (state=initialState, action: ActionInterface) => {
   switch(action.type) {
     case SELECT_SUB_GENRE:
       return { ...state, ...action.payload }
+    case RESET_STATE:
+      return { ...initialState }
     default:
       return state;
   }
