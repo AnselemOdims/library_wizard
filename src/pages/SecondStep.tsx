@@ -1,4 +1,4 @@
-import { FunctionComponent, useEffect } from 'react';
+import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
 
@@ -51,7 +51,7 @@ const SecondStep = () => {
         </div>
       </div>
       <div className="dir_btn_container">
-        <Link to="/"><img src={Icon} />Back</Link>
+        <Link to="/"><img src={Icon} alt="back arrow"/>Back</Link>
         <Link 
           to={addNew ? '/third-step' : '/fourth-step'}
           className={!id ? 'inactive__link' : ''}

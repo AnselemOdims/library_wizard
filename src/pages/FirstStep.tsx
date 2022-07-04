@@ -23,7 +23,7 @@ const FirstStep: FunctionComponent<FirstStepProps> = ({ genres }) => {
         <GenreButtonList data={genres} />
       </div>
       <div className="dir_btn_container">
-        <Link to="/"><img src={Icon} />Back</Link>
+        <Link to="/"><img src={Icon} alt="icon"/>Back</Link>
         <Link 
           to="/second-step" 
           className={!id ? 'inactive__link' : ''}

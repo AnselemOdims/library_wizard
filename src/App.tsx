@@ -1,4 +1,4 @@
-import { Routes, Route, useLocation } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 
 import Header from './components/Header';
 import FirstStep from './pages/FirstStep';
@@ -9,8 +9,6 @@ import data from './utils/data';
 
 const App = () => {
   const { genres } = data;
-
-  const location = useLocation();
 
   return (
     <section className="App">

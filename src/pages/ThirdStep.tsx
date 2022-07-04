@@ -59,7 +59,7 @@ const ThirdStep = () => {
         </div>
       </div>
       <div className="dir_btn_container">
-        <Link to="/second-step"><img src={Icon} />Back</Link>
+        <Link to="/second-step"><img src={Icon} alt="back arrow"/>Back</Link>
         <Link 
           to='/fourth-step'
           className={!description ? 'inactive__link' : ''}

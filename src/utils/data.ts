@@ -1,4 +1,4 @@
-export default {
+const data = {
 	"genres": [
 		{
 			"id": 1,
@@ -107,3 +107,5 @@ export default {
 		}
 	]
 }
+
+export default data;
