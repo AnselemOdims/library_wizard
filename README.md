@@ -10,7 +10,7 @@ add a new book to the system
 
 # Screenshot
 
-![]()
+![image](https://user-images.githubusercontent.com/43995830/177090591-b6280a89-83f8-4a7f-98da-3f4a6a8f579c.png)
 
 # Live Demo
 
@@ -38,8 +38,8 @@ To get a local copy up and running follow these simple example steps.
 #### Clone this repository
 
 ```bash
-$ git clone git@github.com:AnselemOdims/Stock-metrics.git
-$ cd Stock-metrics
+$ git clone git@github.com:AnselemOdims/library_wizard.git
+$ cd library_wizard
 ```
 ## Available Scripts
 
