@@ -5,7 +5,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import Form from '../components/Form';
 import SuccessModal from '../components/SuccessModal';
 import Icon from '../images/down.svg';
-import { postData } from '../utils/fakeFetch';
+import { fakeFetch } from '../utils/fakeFetch';
 import { StateType, SubGenreInterface } from '../utils/types';
 interface FourthStepProps {}
 
@@ -39,7 +39,7 @@ const FourthStep: FunctionComponent<FourthStepProps> = () => {
 		}
 		try {
 			setLoading(true);
-			const res = await postData(formData);
+			const res = await fakeFetch.post('/api/add-book',formData);
 			console.log(res);
 			setShowModal(true);
 		} catch (err) {

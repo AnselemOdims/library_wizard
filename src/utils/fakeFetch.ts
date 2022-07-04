@@ -1,12 +1,12 @@
-export const postData = (data: any) =>
-	new Promise((resolve, reject) => {
-		const { description, ...others } = data;
-		if (
-			(data.description && Object.values(data).includes('')) &&
-			(!data.description && Object.values({ ...others }).includes(''))
-		) {
-			return setTimeout(() => reject(new Error('All data is required')), 2000);
-		}
-
-		setTimeout(() => resolve(data), 2000);
-	});
+export const fakeFetch = {
+	post: (url:string, data:any) => {
+		return new Promise((resolve, reject) => {
+			const { title } = data;
+			if (!title) {
+				return setTimeout(() => reject(new Error('All data is required')), 2000);
+			}
+	
+			setTimeout(() => resolve({ data, url }), 2000);
+		});
+	}
+}
