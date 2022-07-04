@@ -1,7 +1,5 @@
-import  { FunctionComponent } from 'react';
-
 import GenreButton from './GenreButton';
-import { GenreInterface, SubGenreInterface } from '../utils/types';
+import { SubGenreInterface } from '../utils/types';
 
 export interface GenreButtonListProps {
   id?: number;

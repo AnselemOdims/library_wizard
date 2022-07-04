@@ -6,11 +6,8 @@ import GenreButtonList, { GenreButtonListProps } from '../components/GenreButton
 import { selectSubGenre, trackStep } from '../redux/actions/genreActions';
 import { StateType, SubGenreInterface } from '../utils/types';
 import Icon from '../images/down.svg';
-interface SecondStepProps {
-  
-}
- 
-const SecondStep: FunctionComponent<SecondStepProps> = () => {
+
+const SecondStep = () => {
   const step = useSelector<RootState, StateType>(state => state.step);
   const subGenre = useSelector<RootState, GenreButtonListProps[]>(state => state.genre.subgenres!)
   const { id, addNew } = useSelector<RootState, SubGenreInterface>(state => state.subGenre)

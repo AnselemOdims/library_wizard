@@ -1,4 +1,3 @@
-import { GenreInterface, StateType, SubGenreInterface } from '../../utils/types';
 import { ADD_GENRE, CREATE_SUB_GENRE, RESET_STATE } from '../actions/genreActions';
 
 interface NewGenreInterface {

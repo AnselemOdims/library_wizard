@@ -1,11 +1,6 @@
-import { FunctionComponent } from 'react';
-
 import ProgressTracker from './ProgressTracker';
-interface HeaderProps {
 
-}
- 
-const Header: FunctionComponent<HeaderProps> = () => {
+const Header = () => {
 
   return ( 
     <div>

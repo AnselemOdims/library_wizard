@@ -9,7 +9,6 @@ import Icon from '../images/down.svg';
  
 const FirstStep: FunctionComponent<FirstStepProps> = ({ genres }) => {
   const { id } = useSelector<RootState, GenreButtonListProps>(state => state.genre!)
-  // const step = useSelector<RootState, StateType>(state => state.step)
   const dispatch = useDispatch();
 
   const handleClick = () => {

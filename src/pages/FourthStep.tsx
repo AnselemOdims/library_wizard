@@ -1,7 +1,6 @@
 import { FunctionComponent, useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
-import { CSSTransition } from 'react-transition-group';
 
 import Form from '../components/Form';
 import SuccessModal from '../components/SuccessModal';

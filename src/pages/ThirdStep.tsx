@@ -1,17 +1,14 @@
-import { FunctionComponent, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
 import Checkbox from 'react-checkbox-component';
 
-import GenreButtonList, { GenreButtonListProps } from '../components/GenreButtonList';
-import { StateType, SubGenreInterface } from '../utils/types';
+import { GenreButtonListProps } from '../components/GenreButtonList';
+import { StateType } from '../utils/types';
 import Icon from '../images/down.svg';
 import { createSubGenre, selectSubGenre, trackStep } from '../redux/actions/genreActions';
-interface ThirdStepProps {
-  
-}
  
-const ThirdStep: FunctionComponent<ThirdStepProps> = () => {
+const ThirdStep = () => {
   const step = useSelector<RootState, StateType>(state => state.step);
   const subGenre = useSelector<RootState, GenreButtonListProps[]>(state => state.genre.subgenres!)
   const navigate = useNavigate();
@@ -41,7 +38,7 @@ const ThirdStep: FunctionComponent<ThirdStepProps> = () => {
     if(!step.firstStep){
       navigate('/')
     }
-  })
+  })  
   return (  
     <div>
       <div className="add__new">
