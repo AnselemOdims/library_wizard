@@ -38,8 +38,8 @@ To get a local copy up and running follow these simple example steps.
 #### Clone this repository
 
 ```bash
-$ git clone git@github.com:AnselemOdims/Stock-metrics.git
-$ cd Stock-metrics
+$ git clone git@github.com:AnselemOdims/library_wizard.git
+$ cd library_wizard
 ```
 ## Available Scripts
 
